@@ -275,7 +275,7 @@ let availableDaysTimes = [];
 // availableDaysTimes = [ {date: string, times: string[ format: 24h:mm ] } ]
 
 function createAvailableTimes() {
-  let jsonfile = JSON.parse(fs.readFileSync('./available_times.json'))
+  let jsonfile = JSON.parse(fs.readFileSync('./service/available_times.json'))
   let workDays = jsonfile.work_days
   workDays.forEach(day => {
     let dayObj = {}
