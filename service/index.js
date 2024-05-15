@@ -363,7 +363,7 @@ function userLogout() {
 // method: GET
 function getMenu() {
   console.log('Getting menu...')
-  let response = JSON.parse(fs.readFileSync('./menu.json'))
+  let response = JSON.parse(fs.readFileSync('./service/menu.json'))
   // response.menu_items.forEach(item => {
   //   if (orderCount[item.id] === undefined) {
   //     console.log('order id is undefined')

@@ -29,3 +29,4 @@ pushToProd.sh
 *.njsproj
 *.sln
 *.sw?
+/node_modules/
