@@ -117,7 +117,7 @@ div.order {
     z-index: 1;
     text-align: center;
 }
-.time-dropdown {
+#time-dropdown {
     display: none;
     flex-direction: column;
     position: absolute;
