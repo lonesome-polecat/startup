@@ -70,8 +70,8 @@ function App() {
                 />
                 <Route path='/index' element={<Home />} />
                 <Route path='/login' element={<Login changeAuthentication={changeAuthentication}/>} />
-                <Route path='/menu' element={<Menu />} />
-                <Route path='/orders' element={<Orders />} />
+                <Route path='/menu' element={<Menu isAuthenticated={isAuthenticated} />} />
+                <Route path='/orders' element={<Orders isAuthenticated={isAuthenticated} />} />
                 <Route path='/contact' element={<Contact />} />
                 {/*<Route path='*' element={<NotFound />} />*/}
             </Routes>
