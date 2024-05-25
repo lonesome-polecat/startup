@@ -2,6 +2,7 @@ import React from 'react'
 import { useMountedFetch, importImg } from './fetch.jsx'
 import Image from './Image.jsx'
 import OrderDialog from './OrderDialog.jsx'
+import './css/menu.css'
 
 export function Menu(props) {
     let [showDialog, setDialogDisplay] = React.useState(false)

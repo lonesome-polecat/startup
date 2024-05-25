@@ -275,7 +275,7 @@ let availableDaysTimes = [];
 // availableDaysTimes = [ {date: string, times: string[ format: 24h:mm ] } ]
 
 function createAvailableTimes() {
-  let jsonfile = JSON.parse(fs.readFileSync('./available_times.json'))
+  let jsonfile = JSON.parse(fs.readFileSync('./service/available_times.json'))
   let workDays = jsonfile.work_days
   workDays.forEach(day => {
     let dayObj = {}
@@ -363,7 +363,7 @@ function userLogout() {
 // method: GET
 function getMenu() {
   console.log('Getting menu...')
-  let response = JSON.parse(fs.readFileSync('./menu.json'))
+  let response = JSON.parse(fs.readFileSync('./service/menu.json'))
   // response.menu_items.forEach(item => {
   //   if (orderCount[item.id] === undefined) {
   //     console.log('order id is undefined')
