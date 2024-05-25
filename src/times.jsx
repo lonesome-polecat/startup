@@ -5,8 +5,6 @@ import { TimeNotifier } from './timesEventNotifier.js';
 export function Times(props) {
 
     const [availableTimes, setAvailableTimes] = React.useState(null)
-    const [selectedDate, setSelectedDate] = React.useState('')
-    const [selectedTime, setSelectedTime] = React.useState('')
     let dateDropdownRef = React.useRef()
     let timeDropdownRef = React.useRef()
     //
@@ -20,8 +18,8 @@ export function Times(props) {
 
     React.useEffect(() => {
         if (availableTimes) {
-            setSelectedDate(availableTimes.days_and_times[0].date)
-            setSelectedTime(availableTimes.days_and_times[0].times[0])
+            props.setSelectedDate(availableTimes.days_and_times[0].date)
+            props.setSelectedTime(availableTimes.days_and_times[0].times[0])
         }
         return () => {
         }
@@ -35,13 +33,13 @@ export function Times(props) {
     function updateSelectedDate(event) {
         console.log(event)
         const newDate = event.target.innerText
-        setSelectedDate(newDate)
+        props.setSelectedDate(newDate)
         showDates()
     }
 
     function updateSelectedTime(event) {
         const newTime = event.target.innerText
-        setSelectedTime(newTime)
+        props.setSelectedTime(newTime)
         showTimes()
     }
 
@@ -94,13 +92,13 @@ export function Times(props) {
             {availableTimes && (
                 <>
                     <div>
-                        <button id='date-selector' onClick={showDates}>{selectedDate}</button>
+                        <button id='date-selector' onClick={showDates}>{props.selectedDate}</button>
                         <div id='date-dropdown' ref={dateDropdownRef}>
                             {createDateSelector()}
                         </div>
                     </div>
                     <div>
-                        <button id='time-selector' onClick={showTimes}>{selectedTime}</button>
+                        <button id='time-selector' onClick={showTimes}>{props.selectedTime}</button>
                         <div id='time-dropdown' ref={timeDropdownRef}>
                             {createTimeSelector()}
                         </div>
